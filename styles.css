@@ -27,3 +27,7 @@ body {
     background-color: cyan;
     border: 0.5px solid;
 }
+
+.change {
+    background-color: yellow;
+}
