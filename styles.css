@@ -1,7 +1,29 @@
-.container {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    background-color: darkblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: red;
+    width: 70%;
+    height: 70%;
+    padding: 20px;
 }
 
 .square {
-    
+    width: 6.25%;
+    height: 6.25%;
+    background-color: cyan;
+    border: 0.5px solid;
 }
