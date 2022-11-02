@@ -8,6 +8,7 @@ body {
     background-color: darkblue;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -30,4 +31,11 @@ body {
 
 .change {
     background-color: yellow;
+}
+
+.newGrid {
+    margin-bottom: 50px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
 }
