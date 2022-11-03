@@ -17,20 +17,20 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: red;
-    width: 70%;
-    height: 70%;
+    width: 700px;
+    height: 700px;
     padding: 20px;
 }
 
 .square {
     width: 6.25%;
     height: 6.25%;
-    background-color: cyan;
-    border: 0.5px solid;
+    background-color: black;
+    border: 0.5px solid purple;
 }
 
 .change {
-    background-color: yellow;
+    background-color: white;
 }
 
 .newGrid {
