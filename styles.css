@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
-    background-color: darkblue;
+    background-color: silver;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,7 +17,7 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    background-color: red;
+    background-color: #fff;
     width: 700px;
     height: 700px;
     padding: 20px;
@@ -26,16 +27,24 @@ body {
     width: 6.25%;
     height: 6.25%;
     background-color: black;
-    border: 0.5px solid purple;
+    border: 0.5px solid lightgray;
 }
 
 .change {
     background-color: white;
 }
 
-.newGrid {
-    margin-bottom: 50px;
+.newGridBtn {
+    margin-bottom: 30px;
     height: 40px;
-    width: 150px;
+    width: 250px;
     border-radius: 10px;
+    background-color: gray;
+    color: #fff;
+    padding: 30px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
 }

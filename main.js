@@ -8,13 +8,27 @@ for (let i = 0; i < 256; i++) {
 let random = "rgb("+ Math.floor(Math.random() * 256)+ "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
 
 function changeColor(e) {
-    e.target.style.backgroundColor = "rgb("+ Math.floor(Math.random() * 256)+ "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
-   // e.target.classList.add("change");
+    let color1 = Math.floor(Math.random() * 256);
+    let color2 = Math.floor(Math.random() * 256);
+    let color3 = Math.floor(Math.random() * 256);
+    let divideColor1 = color1 * 0.1;
+    let divideColor2 = color2 * 0.1;
+    let divideColor3 = color3 * 0.1;
+    e.target.style.backgroundColor = "rgb("+ color1 + "," + color2 + "," + color3 + ")";
+    e.target.removeEventListener("mouseover", changeColor);
+
+    e.target.addEventListener("mouseover", () => {
+        color1 = color1 - divideColor1;
+        color2 = color2 - divideColor2;
+        color3 = color3 - divideColor3;
+        e.target.style.backgroundColor = "rgb("+ color1 + "," + color2 + "," + color3 + ")";
+        console.log(e.target.style.backgroundColor);
+    })
 }
 
-const newGrid = document.querySelector(".newGrid");
+const newGridBtn = document.querySelector(".newGridBtn");
 let newContainer = 0;
-newGrid.addEventListener("click", changeGrid);
+newGridBtn.addEventListener("click", changeGrid);
 let userSize;
 let boxSize;
 function changeGrid() {
