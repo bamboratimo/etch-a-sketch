@@ -5,7 +5,6 @@ for (let i = 0; i < 256; i++) {
     div.addEventListener("mouseover", changeColor);
     container.appendChild(div);
 }
-let random = "rgb("+ Math.floor(Math.random() * 256)+ "," + Math.floor(Math.random() * 256) + "," + Math.floor(Math.random() * 256) + ")";
 
 function changeColor(e) {
     let color1 = Math.floor(Math.random() * 256);

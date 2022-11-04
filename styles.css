@@ -26,18 +26,23 @@ body {
 .square {
     width: 6.25%;
     height: 6.25%;
-    background-color: black;
-    border: 0.5px solid lightgray;
+    background-color: white;
+    border: 1px solid lightgray;
 }
 
 .change {
     background-color: white;
 }
 
-.newGridBtn {
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
     margin-bottom: 30px;
     height: 40px;
-    width: 250px;
+    width: 200px;
     border-radius: 10px;
     background-color: gray;
     color: #fff;
