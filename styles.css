@@ -30,10 +30,6 @@ body {
     border: 1px solid lightgray;
 }
 
-.change {
-    background-color: white;
-}
-
 .buttons {
     display: flex;
     gap: 10px;

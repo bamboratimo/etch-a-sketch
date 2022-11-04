@@ -1,10 +1,30 @@
 let container = document.querySelector(".container");
+const resetBtn = document.querySelector(".resetBtn");
+const rgbBtn = document.querySelector(".rgbBtn");
+
+
 for (let i = 0; i < 256; i++) {
     let div = document.createElement("div");
     div.classList.add("square");
     div.addEventListener("mouseover", changeColor);
     container.appendChild(div);
 }
+let squares = document.querySelectorAll(".square");
+
+
+
+rgbBtn.addEventListener("click", useRgb);
+
+// CALL changeColor FUNCTION FOR EVERY SQUARE
+
+function useRgb() {
+    let squares = document.querySelectorAll(".square");
+    squares.forEach(() => {
+        changeColor;
+    });
+}
+
+// CHANGE COLOR TO RANDOM RGB
 
 function changeColor(e) {
     let color1 = Math.floor(Math.random() * 256);
@@ -25,11 +45,18 @@ function changeColor(e) {
     })
 }
 
+function toBlack() {
+
+}
+
+//CREATE NEW GRID BASED ON INPUT
+
 const newGridBtn = document.querySelector(".newGridBtn");
 let newContainer = 0;
 newGridBtn.addEventListener("click", changeGrid);
 let userSize;
 let boxSize;
+
 function changeGrid() {
     do {
         userSize = prompt("Enter new grid size");
@@ -42,10 +69,11 @@ function changeGrid() {
     } while (userSize > 100);
     boxSize = 100 / userSize;
     userSize = userSize * userSize;
-    container.remove();
-    container = document.createElement("div");
-    document.body.appendChild(container);
-    container.classList.add("container");
+    squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+        square.remove();
+    })
+
     for (let i = 0; i < userSize; i++) {
         let div = document.createElement("div");
         div.classList.add("square");
@@ -54,4 +82,13 @@ function changeGrid() {
         div.addEventListener("mouseover", changeColor);
         container.appendChild(div);
     }
+    squares = document.querySelectorAll(".square");
+    console.log(squares);
+}
+resetBtn.addEventListener("click", resetGrid);
+function resetGrid() {
+    //let squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+        square.style.backgroundColor = "white";
+    })
 }
