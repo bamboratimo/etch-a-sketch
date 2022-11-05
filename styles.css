@@ -26,9 +26,7 @@ body {
 .square {
     width: 6.25%;
     height: 6.25%;
-    opacity: 0.5;
-    /*background-color: rgba(0, 0, 0, 0.0);*/
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.0);
     border: 1px solid lightgray;
 }
 
@@ -50,4 +48,8 @@ button {
     align-items: center;
     font-size: 16px;
     cursor: pointer;
+}
+
+.opacity {
+    opacity: 0;
 }

@@ -20,7 +20,7 @@ rgbBtn.addEventListener("click", useRgb);
 
 function useRgb() {
     squares.forEach((square) => {
-        square.removeEventListener("mouseover", toBlack);
+        square.removeEventListener("mouseover", blacker);
         square.addEventListener("mouseover", changeColor);
     });
 }
@@ -46,7 +46,6 @@ function changeColor(e) {
     })*/
 }
 blackBtn.addEventListener("click", toBlack);
-
 function toBlack() {
     squares.forEach((square) => {
         square.removeEventListener("mouseover", changeColor);
@@ -55,10 +54,15 @@ function toBlack() {
 }
 
 function blacker(e) {
-    let opacity = e.target.style.opacity;
-    console.log(opacity);
-    opacity = opacity + 0.1;
-    e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + "," + opacity + ")";
+    let opa = 0;
+    let newOpa = opa + 0.1;
+    e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + ","  + newOpa + ")";
+    e.target.removeEventListener("mouseover", blacker);
+
+    e.target.addEventListener("mouseover", () => {
+        newOpa = newOpa + 0.1;
+        e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + "," + newOpa + ")";
+    });
 }
 
 //CREATE NEW GRID BASED ON INPUT
