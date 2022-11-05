@@ -26,6 +26,8 @@ body {
 .square {
     width: 6.25%;
     height: 6.25%;
+    opacity: 0.5;
+    /*background-color: rgba(0, 0, 0, 0.0);*/
     background-color: white;
     border: 1px solid lightgray;
 }

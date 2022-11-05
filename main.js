@@ -1,6 +1,8 @@
 let container = document.querySelector(".container");
 const resetBtn = document.querySelector(".resetBtn");
 const rgbBtn = document.querySelector(".rgbBtn");
+const blackBtn = document.querySelector(".blackBtn");
+let black = 0;
 
 
 for (let i = 0; i < 256; i++) {
@@ -12,15 +14,14 @@ for (let i = 0; i < 256; i++) {
 let squares = document.querySelectorAll(".square");
 
 
-
 rgbBtn.addEventListener("click", useRgb);
 
 // CALL changeColor FUNCTION FOR EVERY SQUARE
 
 function useRgb() {
-    let squares = document.querySelectorAll(".square");
-    squares.forEach(() => {
-        changeColor;
+    squares.forEach((square) => {
+        square.removeEventListener("mouseover", toBlack);
+        square.addEventListener("mouseover", changeColor);
     });
 }
 
@@ -34,7 +35,7 @@ function changeColor(e) {
     let divideColor2 = color2 * 0.1;
     let divideColor3 = color3 * 0.1;
     e.target.style.backgroundColor = "rgb("+ color1 + "," + color2 + "," + color3 + ")";
-    e.target.removeEventListener("mouseover", changeColor);
+   /* e.target.removeEventListener("mouseover", changeColor);
 
     e.target.addEventListener("mouseover", () => {
         color1 = color1 - divideColor1;
@@ -42,11 +43,22 @@ function changeColor(e) {
         color3 = color3 - divideColor3;
         e.target.style.backgroundColor = "rgb("+ color1 + "," + color2 + "," + color3 + ")";
         console.log(e.target.style.backgroundColor);
-    })
+    })*/
 }
+blackBtn.addEventListener("click", toBlack);
 
 function toBlack() {
+    squares.forEach((square) => {
+        square.removeEventListener("mouseover", changeColor);
+        square.addEventListener("mouseover", blacker);
+    });
+}
 
+function blacker(e) {
+    let opacity = e.target.style.opacity;
+    console.log(opacity);
+    opacity = opacity + 0.1;
+    e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + "," + opacity + ")";
 }
 
 //CREATE NEW GRID BASED ON INPUT
