@@ -3,8 +3,11 @@ const resetBtn = document.querySelector(".resetBtn");
 const rgbBtn = document.querySelector(".rgbBtn");
 const blackBtn = document.querySelector(".blackBtn");
 
+// CHANGE VALUE BASED ON COLOR SELECT
+
 let clicked = false;
 
+// CREATE STARTING GRID AND MAKE IT USE RGB COLORS
 
 for (let i = 0; i < 256; i++) {
     let div = document.createElement("div");
@@ -40,17 +43,14 @@ function changeColor(e) {
     let divideColor2 = color2 * 0.1;
     let divideColor3 = color3 * 0.1;
     e.target.style.backgroundColor = "rgb("+ color1 + "," + color2 + "," + color3 + ")";
-   /* e.target.removeEventListener("mouseover", changeColor);
+   
 
-    e.target.addEventListener("mouseover", () => {
-        color1 = color1 - divideColor1;
-        color2 = color2 - divideColor2;
-        color3 = color3 - divideColor3;
-        e.target.style.backgroundColor = "rgb("+ color1 + "," + color2 + "," + color3 + ")";
-        console.log(e.target.style.backgroundColor);
-    })*/
 }
+
 blackBtn.addEventListener("click", toBlack);
+
+// RUN blacker FUNCTION WHEN CLICK BUTTON
+
 function toBlack() {
     if (clicked === true) {
         return
@@ -62,8 +62,11 @@ function toBlack() {
         square.addEventListener("mouseover", blacker);
     });
 }
-let opa = 0;
+
+// COLOR BOARD INCREMENTALLY MORE BLACK
+
 function blacker(e) {
+    let opa = 0;
     let newOpa = opa + 0.1;
     e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + ","  + newOpa + ")";
     e.target.removeEventListener("mouseover", blacker);
@@ -73,18 +76,6 @@ function blacker(e) {
         e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + "," + newOpa + ")";
     });
 }
-
-/*function blacker2(e) {
-    //let opa = 0;
-    let newOpa = opa + 0.1;
-    e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + ","  + newOpa + ")";
-    e.target.removeEventListener("mouseover", blacker2);
-
-    e.target.addEventListener("mouseover", () => {
-        newOpa = newOpa + 0.1;
-        e.target.style.backgroundColor = "rgba("+ 0 + "," + 0 + "," + 0 + "," + newOpa + ")";
-    });
-}*/
 
 //CREATE NEW GRID BASED ON INPUT
 
@@ -124,8 +115,7 @@ function changeGrid() {
         container.appendChild(div);
     }
 }
-    //squares = document.querySelectorAll(".square");
-
+// RESET GRID IF CLICK RESET BUTTON
 resetBtn.addEventListener("click", resetGrid);
 function resetGrid() {
     squares = document.querySelectorAll(".square");
@@ -136,6 +126,5 @@ function resetGrid() {
         square.addEventListener("mouseover", blacker);
         }
         square.style.backgroundColor = "white";
-        //square.addEventListener("mouseover", blacker2)
     })
 }
