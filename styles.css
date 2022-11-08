@@ -5,8 +5,14 @@
     font-family: sans-serif;
 }
 
+h1 {
+    margin-bottom: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+
 body {
-    background-color: silver;
+    background-color: skyblue;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,15 +24,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: #fff;
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     padding: 20px;
 }
 
 .square {
     width: 6.25%;
     height: 6.25%;
-    background-color: rgba(0, 0, 0, 0.0);
+    background-color: rgba(0, 0, 0, 0);
     border: 1px solid lightgray;
 }
 
